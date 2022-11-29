@@ -15,12 +15,16 @@
 const rNow = document.querySelector('#currentDay')
 const today = new Date();
 const dayJsObject = dayjs();
-// const saveB = document.querySelector('#save0')
+//const saveB = document.querySelector('#save0')
 const lead = document.querySelector('.lead')
 const entry = document.querySelector('.description')
+const saveBtn = document.querySelector('.saveBtn')
+
 
 // Displaying current date
 rNow.textContent = dayjs().format('dddd, MMMM D, YYYY h:mm A');
+
+saveBtn.addEventListener('click', saveEntry);
 
 // Event Listener
 // saveB.addEventListener('click', saveEntry);
@@ -28,13 +32,14 @@ rNow.textContent = dayjs().format('dddd, MMMM D, YYYY h:mm A');
 // Saving to Local Storage
 function saveEntry(event) {
     event.preventDefault();
-
-    var entry1 = entry.value.trim();
+    var sch = event.target.previousElementSibling.id
+    //var entry1 = entry.value.trim();
+    //console.log(event.target.previousElementSibling.value)
+    var entry = event.target.previousElementSibling.value
+    //console.log(event.target.id)
+    window.localStorage.setItem(sch, JSON.stringify(entry));
     
-
-    window.localStorage.setItem('Scheduled', JSON.stringify(entry1));
-    
-    console.log(entry1);
+    //console.log(entry1);
     //alert ('Event Saved');
 }
 
@@ -65,29 +70,56 @@ const saveB21 = document.querySelector('#save21')
 const saveB22 = document.querySelector('#save22')
 const saveB23 = document.querySelector('#save23')
 
+saveB.value = window.localStorage.getItem("save0")
+saveB1.value = window.localStorage.getItem("save1")
+saveB2.value = window.localStorage.getItem("save2")
+saveB3.value = window.localStorage.getItem("save3")
+saveB4.value = window.localStorage.getItem("save4")
+saveB5.value = window.localStorage.getItem("save5")
+saveB6.value = window.localStorage.getItem("save6")
+saveB7.value = window.localStorage.getItem("save7")
+saveB8.value = window.localStorage.getItem("save8")
+saveB9.value = window.localStorage.getItem("save9")
+saveB10.value = window.localStorage.getItem("save10")
+saveB11.value = window.localStorage.getItem("save11")
+saveB12.value = window.localStorage.getItem("save12")
+saveB13.value = window.localStorage.getItem("save13")
+saveB14.value = window.localStorage.getItem("save14")
+saveB15.value = window.localStorage.getItem("save15")
+saveB16.value = window.localStorage.getItem("save16")
+saveB17.value = window.localStorage.getItem("save17")
+saveB18.value = window.localStorage.getItem("save18")
+saveB19.value = window.localStorage.getItem("save19")
+saveB20.value = window.localStorage.getItem("save20")
+saveB21.value = window.localStorage.getItem("save21")
+saveB22.value = window.localStorage.getItem("save22")
+saveB23.value = window.localStorage.getItem("save23")
+
+//console.log("hello")
+
 // The Long way eventListener
 
-saveB.addEventListener('click', saveEntry);
-saveB1.addEventListener('click', saveEntry);
-saveB2.addEventListener('click', saveEntry);
-saveB3.addEventListener('click', saveEntry);
-saveB4.addEventListener('click', saveEntry);
-saveB5.addEventListener('click', saveEntry);
-saveB6.addEventListener('click', saveEntry);
-saveB7.addEventListener('click', saveEntry);
-saveB8.addEventListener('click', saveEntry);
-saveB9.addEventListener('click', saveEntry);
-saveB10.addEventListener('click', saveEntry);
-saveB11.addEventListener('click', saveEntry);
-saveB12.addEventListener('click', saveEntry);
-saveB13.addEventListener('click', saveEntry);
-saveB14.addEventListener('click', saveEntry);
-saveB15.addEventListener('click', saveEntry);
-saveB16.addEventListener('click', saveEntry);
-saveB17.addEventListener('click', saveEntry);
-saveB18.addEventListener('click', saveEntry);
-saveB19.addEventListener('click', saveEntry);
-saveB20.addEventListener('click', saveEntry);
-saveB21.addEventListener('click', saveEntry);
-saveB22.addEventListener('click', saveEntry);
-saveB23.addEventListener('click', saveEntry);
+// saveB.addEventListener('click', saveEntry);
+// saveB1.addEventListener('click', saveEntry);
+// saveB2.addEventListener('click', saveEntry);
+// saveB3.addEventListener('click', saveEntry);
+// saveB4.addEventListener('click', saveEntry);
+// saveB5.addEventListener('click', saveEntry);
+// saveB6.addEventListener('click', saveEntry);
+// saveB7.addEventListener('click', saveEntry);
+// saveB8.addEventListener('click', saveEntry);
+// saveB9.addEventListener('click', saveEntry);
+// saveB10.addEventListener('click', saveEntry);
+// saveB11.addEventListener('click', saveEntry);
+// saveB12.addEventListener('click', saveEntry);
+// saveB13.addEventListener('click', saveEntry);
+// saveB14.addEventListener('click', saveEntry);
+// saveB15.addEventListener('click', saveEntry);
+// saveB16.addEventListener('click', saveEntry);
+// saveB17.addEventListener('click', saveEntry);
+// saveB18.addEventListener('click', saveEntry);
+// saveB19.addEventListener('click', saveEntry);
+// saveB20.addEventListener('click', saveEntry);
+// saveB21.addEventListener('click', saveEntry);
+// saveB22.addEventListener('click', saveEntry);
+// saveB23.addEventListener('click', saveEntry);
