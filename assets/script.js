@@ -14,7 +14,7 @@
 // Variables
 const rNow = document.querySelector('#currentDay')
 const today = new Date();
-const dayJsObject = dayjs();
+const dayJsObject = dayjs().format('dddd, MMMM D, YYYY h:mm A');
 //const saveB = document.querySelector('#save0')
 const lead = document.querySelector('.lead')
 const entry = document.querySelector('.description')
@@ -23,6 +23,7 @@ const saveBtn = document.querySelector('.saveBtn')
 
 // Displaying current date
 rNow.textContent = dayjs().format('dddd, MMMM D, YYYY h:mm A');
+console.log(dayJsObject);
 
 saveBtn.addEventListener('click', saveEntry);
 
